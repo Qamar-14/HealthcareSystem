@@ -8,6 +8,7 @@ Patient and Doctor profile management.
 Appointment scheduling and management.
 Medical record creation, viewing, and updating.
 Secure storage and retrieval of patient data.
+
 Technologies:
 
 C++ for core logic and data handling.
