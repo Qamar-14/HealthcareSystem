@@ -13,8 +13,8 @@ Patient::Patient(string username,string email, string password, string phone, Ro
 Patient::Patient(const Patient& other) :
     User(other), // Call the base class copy constructor
     patientID(other.patientID),
-    medicalHistory(other.medicalHistory ? make_unique<MedicalRecord>(*other.medicalHistory) : nullptr),
-    profile(other.profile ? make_unique<PatientProfile>(*other.profile) : nullptr),
+    medicalHistory(other.medicalHistory ? make_shared<MedicalRecord>(*other.medicalHistory) : nullptr),
+    profile(other.profile ? make_shared<PatientProfile>(*other.profile) : nullptr),
     appointments(other.appointments) // Copy of map<int, shared_ptr<Appointment>>
 {}
 
@@ -29,7 +29,7 @@ Patient& Patient::operator=(const Patient& other)
 
         // Deep copy MedicalRecord
         if (other.medicalHistory) {
-            this->medicalHistory = make_unique<MedicalRecord>(*other.medicalHistory);
+            this->medicalHistory = make_shared<MedicalRecord>(*other.medicalHistory);
         }
         else {
             this->medicalHistory.reset(); // Ensure no dangling pointer
@@ -37,7 +37,7 @@ Patient& Patient::operator=(const Patient& other)
 
         // Deep copy PatientProfile
         if (other.profile) {
-            this->profile = make_unique<PatientProfile>(*other.profile);
+            this->profile = make_shared<PatientProfile>(*other.profile);
         }
         else {
             this->profile.reset(); // Ensure no dangling pointer
