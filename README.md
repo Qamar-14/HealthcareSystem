@@ -3,15 +3,15 @@ A comprehensive healthcare management system built in C++ designed to streamline
 
 Features:
 
-User authentication and role-based access control (Admin, Doctor, Patient).
-Patient and Doctor profile management.
-Appointment scheduling and management.
-Medical record creation, viewing, and updating.
-Secure storage and retrieval of patient data.
+-User authentication and role-based access control (Admin, Doctor, Patient).
+-Patient and Doctor profile management.
+-Appointment scheduling and management.
+-Medical record creation, viewing, and updating.
+-Secure storage and retrieval of patient data.
 
 Technologies:
 
-C++ for core logic and data handling.
-STL for data structures and algorithms.
-Smart pointers for memory management.
-Singleton pattern for centralized service management.
+-C++ for core logic and data handling.
+-STL for data structures and algorithms.
+-Smart pointers for memory management.
+-Singleton pattern for centralized service management.
