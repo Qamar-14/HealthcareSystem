@@ -86,7 +86,7 @@ shared_ptr<PatientProfile> Doctor::viewPatientProfile(const int patientID) {
 // Function to add a medical record for the patient
 void Doctor::addMedicalRecord(shared_ptr<Patient> patient, string diagnosis,string treatment){
     
-    auto doc = make_shared<Doctor>(this);
+    auto doc = make_shared<Doctor>(*this);
 
     UserService::addMedicalRecord(patient, doc, diagnosis, treatment);
 }

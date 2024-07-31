@@ -131,7 +131,7 @@ vector<shared_ptr<User>> searchDoctor(Specialty field) {
 Status Patient::scheduleAppointment(shared_ptr<Doctor> doctor, DateTime dateTime) {
     if (doctor->checkAvailability(dateTime))
     {
-        auto client = make_shared<Patient>(this);
+        auto client = make_shared<Patient>(*this);
 
         // Book appointment
         auto appointment = make_shared<Appointment>(dateTime, doctor, client);
